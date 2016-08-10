@@ -17,10 +17,6 @@ module.exports = {
   serializer: {
     attributes: [...attributes, ...relationships],
 
-    category: {
-      ref: 'id',
-      included: true,
-      attributes: require('./Category').serializer.attributes,
-    },
+    category: Object.assign({}, require('./Category').serializer, { ref: 'id', included: true }),
   },
 };
