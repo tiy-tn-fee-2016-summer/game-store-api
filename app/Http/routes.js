@@ -21,4 +21,15 @@ Route.group('api', () => {
   Route.post('/register', 'UserController.store');
   Route.post('/token-auth', 'SessionController.store');
   Route.get('/user/current', 'UserController.current').middleware('auth');
+
+  Route.resource('/categories', 'CategoryController')
+    .only('index', 'show').middleware('auth');
+  Route.resource('/categories', 'CategoryController')
+    .only('store', 'update', 'destroy').middleware('auth');
+
+  Route.resource('/games', 'GameController')
+    .only('index', 'show').middleware('auth');
+
+  Route.resource('/games', 'GameController')
+    .only('store', 'update', 'destroy').middleware('auth');
 }).prefix('/api');
