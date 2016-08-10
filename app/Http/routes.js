@@ -18,6 +18,14 @@
 const Route = use('Route');
 
 Route.group('api', () => {
+  Route.get('/status', function * (request, response) {
+    response.json({
+      status: 200,
+      message: 'Working',
+      version: '1.0',
+    });
+  });
+
   Route.post('/register', 'UserController.store');
   Route.post('/token-auth', 'SessionController.store');
   Route.get('/user/current', 'UserController.current').middleware('auth');
