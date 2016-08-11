@@ -6,7 +6,7 @@ const attributes = [
   'release_date',
   'avg_play_time',
   'price',
-  'quantity',
+  'inventory',
 ];
 
 const relationships = [

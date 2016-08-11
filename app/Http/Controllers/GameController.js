@@ -9,7 +9,7 @@ const attributes = [
   'release-date',
   'avg-play-time',
   'price',
-  'quantity',
+  'inventory',
 ];
 
 class GameController {
