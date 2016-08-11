@@ -4,6 +4,6 @@ module.exports = {
   serializer: {
     attributes: ['name', 'games'],
 
-    games: Object.assign({}, require('./Game').serializer, { ref: 'id', included: false }),
+    games: Object.assign({}, require('./Game').serializer, { ref: 'id', included: true }),
   },
 };
