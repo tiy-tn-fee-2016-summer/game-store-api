@@ -8,6 +8,8 @@ const attributes = [
   'publisher',
   'release-date',
   'avg-play-time',
+  'price',
+  'quantity',
 ];
 
 class GameController {
