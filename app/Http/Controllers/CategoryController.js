@@ -3,12 +3,20 @@
 const Category = use('App/Model/Category');
 const attributes = ['name'];
 
+function cleanHasMany(category) {
+  return Object.assign({}, category, {
+    games: category.games || [] 
+  });
+}
+
 class CategoryController {
 
   * index(request, response) {
     const categories = yield Category.with('games').fetch();
 
-    response.jsonApi('Category', categories);
+    const categoryData = categories.toJSON().map(cleanHasMany);
+
+    response.jsonApi('Category', categoryData);
   }
 
   * store(request, response) {
